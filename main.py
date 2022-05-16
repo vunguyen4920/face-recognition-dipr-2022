@@ -54,7 +54,7 @@ class WelcomeScreen(tk.Frame):
         def __init__(self, parent, controller):
             tk.Frame.__init__(self, parent)
             self.controller = controller
-            addBtn = tk.Button(self, text="Add a User", fg="#ffffff", bg="#263942",command=lambda: self.controller.show_frame("PageOne"))
+            addBtn = tk.Button(self, text="Add a User", fg="#ffffff", bg="#263942",command=lambda: self.controller.show_frame("AddUserScreen"))
             checkBtn = tk.Button(self, text="Check a User", fg="#ffffff", bg="#263942",command=lambda: self.controller.show_frame("CheckUserScreen"))
             quitBtn = tk.Button(self, text="Quit", fg="#263942", bg="#ffffff", command=self.on_closing)
             addBtn.grid(row=1, column=0, ipady=10, ipadx=20)
