@@ -1,0 +1,1 @@
+This folder is to contain the classifier of each person in the datase
