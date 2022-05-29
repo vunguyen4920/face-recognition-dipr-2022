@@ -53,8 +53,7 @@ def main_app():
                 else:   
                     recognized = False
 
-            if recognized: break
-            else:
+            if recognized == False:
                 pred += -1
                 text = "There's a dude behind you"
                 font = cv2.FONT_HERSHEY_PLAIN
