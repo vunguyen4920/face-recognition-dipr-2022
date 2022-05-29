@@ -23,22 +23,18 @@ def train_classifer(personName):
     labels = []
     pictures = {}
 
-
     # Store images in a numpy format and ids of the user on the same index in imageNp and id lists
-
     for root,dirs,files in os.walk(path):
-            pictures = files
-
+        pictures = files
 
     for pic in pictures :
-
-            imgpath = path+pic
-            img = Image.open(imgpath).convert('L')
-            imageNp = np.array(img, 'uint8')
-            id = int(pic.split(personName)[0])
-            #names[name].append(id)
-            faces.append(imageNp)
-            ids.append(id)
+        imgpath = path+pic
+        img = Image.open(imgpath).convert('L')
+        imageNp = np.array(img, 'uint8')
+        id = int(pic.split(personName)[0])
+        #names[name].append(id)
+        faces.append(imageNp)
+        ids.append(id)
 
     ids = np.array(ids)
 
