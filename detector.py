@@ -1,5 +1,4 @@
 import cv2
-from PIL import Image 
 
 # This Create a LBPH recognizer.
 def main_app():
@@ -35,7 +34,6 @@ def main_app():
         for (x, y, w, h) in faces:
             roi_gray = gray[y:y+h,x:x+w]
             closing = cv2.morphologyEx(roi_gray, cv2.MORPH_CLOSE, (3, 3))
-            cv2.imshow('Closed', closing)
 
             recognized = False
 

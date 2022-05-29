@@ -19,7 +19,7 @@ class Main(tk.Tk):
                 names.add(i)
         self.title_font = tkfont.Font(family='Arial', size=16, weight="bold")
         self.title("Personal Identifier")
-        self.geometry("500x100")
+        self.geometry("500x270")
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.resizable(False, False)
         self.active_name = None
@@ -50,11 +50,15 @@ class WelcomeScreen(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller = controller
         addBtn = tk.Button(self, text="Add a User", fg="#ffffff", bg="#263942",command=lambda: self.controller.show_frame("AddUserScreen"))
-        checkBtn = tk.Button(self, text="Check a User", fg="#ffffff", bg="#263942",command=lambda: self.controller.show_frame("WaitingScreen"))
+        checkBtn = tk.Button(self, text="Check Users", fg="#ffffff", bg="#263942",command=lambda: self.controller.show_frame("WaitingScreen"))
         quitBtn = tk.Button(self, text="Quit", fg="#263942", bg="#ffffff", command=self.on_closing)
+        render = PhotoImage(file='homepagepic.png')
+        img = tk.Label(self, image=render)
+        img.image = render
+        img.grid(row=0, column=3, rowspan=4, sticky="nsew")
         addBtn.grid(row=1, column=0, ipady=10, ipadx=20)
-        checkBtn.grid(row=1, column=1, ipady=10, ipadx=20)
-        quitBtn.grid(row=1, column=2, ipady=10, ipadx=20)
+        checkBtn.grid(row=2, column=0, ipady=10, ipadx=20)
+        quitBtn.grid(row=3, column=0, ipady=10, ipadx=20)
 
     def on_closing(self):
         if messagebox.askokcancel("Quit", "Are you sure?"):
